@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="HelloWorldService" targetNamespace="http://apache_soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://apache_soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://apache_soap/" schemaLocation="helloworld_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="getHelloWorldResponse">
+    <wsdl:part name="parameters" element="tns:getHelloWorldResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHelloWorld">
+    <wsdl:part name="parameters" element="tns:getHelloWorld">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="HelloWorld">
+    <wsdl:operation name="getHelloWorld">
+      <wsdl:input name="getHelloWorld" message="tns:getHelloWorld">
+    </wsdl:input>
+      <wsdl:output name="getHelloWorldResponse" message="tns:getHelloWorldResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloWorldServiceSoapBinding" type="tns:HelloWorld">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getHelloWorld">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getHelloWorld">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHelloWorldResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloWorldService">
+    <wsdl:port name="HelloWorldPort" binding="tns:HelloWorldServiceSoapBinding">
+      <soap:address location="http://localhost:8087/com-soap-apache-cxf/services/HelloWorldPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

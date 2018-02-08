@@ -1,0 +1,29 @@
+package sample;
+
+ class Parent {
+	void display()
+	{
+		System.out.println("inside parent");
+	}
+}
+
+
+ class Child extends Parent{
+	void display()
+	{
+		System.out.println("inside child");
+	}
+}
+ class Reference
+{
+	public static void main(String[] args) {
+       Child ch=new Child();
+       Parent r;
+       r=ch;
+       r.display();
+       
+	}
+}
+
+
+

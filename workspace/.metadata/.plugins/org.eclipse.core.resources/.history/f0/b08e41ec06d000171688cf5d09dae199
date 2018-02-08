@@ -1,0 +1,19 @@
+package sample;
+
+import java.util.ArrayList;
+
+public class Array {
+
+	public static void main(String[] args) {
+		ArrayList<String> a=new ArrayList<String>();
+		a.add("10");
+		//Array b=new Array();
+		//Array c=new Array();
+		//Array d=new Array();
+		for(String obj:a)
+		{
+			System.out.println(obj);
+		}
+	}
+
+}

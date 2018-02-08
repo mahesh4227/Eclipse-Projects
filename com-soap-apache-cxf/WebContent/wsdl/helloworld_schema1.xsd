@@ -1,0 +1,15 @@
+<xs:schema xmlns:tns="http://apache_soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://apache_soap/" version="1.0">
+
+  <xs:element name="getHelloWorld" type="tns:getHelloWorld"/>
+
+  <xs:element name="getHelloWorldResponse" type="tns:getHelloWorldResponse"/>
+
+  <xs:complexType name="getHelloWorld">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getHelloWorldResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+</xs:schema>

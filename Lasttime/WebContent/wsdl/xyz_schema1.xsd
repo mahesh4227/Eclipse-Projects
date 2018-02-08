@@ -1,0 +1,15 @@
+<xs:schema xmlns:tns="http://last/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://last/" version="1.0">
+
+  <xs:element name="hello" type="tns:hello"/>
+
+  <xs:element name="helloResponse" type="tns:helloResponse"/>
+
+  <xs:complexType name="hello">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="helloResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+</xs:schema>

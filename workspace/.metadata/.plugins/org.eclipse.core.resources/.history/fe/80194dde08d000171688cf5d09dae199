@@ -1,0 +1,31 @@
+package sample;
+
+//import java.util.ArrayList;
+
+public class Array {
+
+	int x;
+	Array(int p)
+	{
+		x=p;
+	}
+	
+	
+	public static void main(String[] args) {
+		Array obj[]=new Array[5];
+		//int i=0;
+		for(Array n:obj)
+		{
+			n=new Array(2);
+		}
+		
+		for(Array n:obj)
+		{
+			System.out.println(n.x);
+		}
+		
+		
+		
+	}
+
+}

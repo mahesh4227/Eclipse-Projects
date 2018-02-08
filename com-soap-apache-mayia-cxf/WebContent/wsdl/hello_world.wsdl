@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Hello_WorldService" targetNamespace="http://base_package/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://base_package/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://base_package/" version="1.0" xmlns:tns="http://base_package/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="getHello" type="tns:getHello"/>
+
+  <xs:element name="getHelloResponse" type="tns:getHelloResponse"/>
+
+  <xs:complexType name="getHello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getHelloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getHelloResponse">
+    <wsdl:part name="parameters" element="tns:getHelloResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHello">
+    <wsdl:part name="parameters" element="tns:getHello">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Hello_World">
+    <wsdl:operation name="getHello">
+      <wsdl:input name="getHello" message="tns:getHello">
+    </wsdl:input>
+      <wsdl:output name="getHelloResponse" message="tns:getHelloResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Hello_WorldServiceSoapBinding" type="tns:Hello_World">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getHello">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getHello">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHelloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Hello_WorldService">
+    <wsdl:port name="Hello_WorldPort" binding="tns:Hello_WorldServiceSoapBinding">
+      <soap:address location="http://localhost:8086/com-soap-apache-mayia-cxf/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2017 1:27:08 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.Maveenexa.Demo.Employee1" table="EMPLOYEE1">
+        <id name="eid" type="int">
+            <column name="EID" />
+            <generator class="assigned" />
+        </id>
+        <property name="ename" type="java.lang.String">
+            <column name="ENAME" />
+        </property>
+        <property name="eage" type="int">
+            <column name="EAGE" />
+        </property>
+    </class>
+</hibernate-mapping>
